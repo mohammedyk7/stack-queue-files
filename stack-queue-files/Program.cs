@@ -28,7 +28,7 @@ namespace stack_queue_files
             while (stack.Count > 0)
                 reversed += stack.Pop(); // This reverses the string by LIFO (Last In, First Out) order
             while (stack.Count > 0)
-                word += queue.Dequeue(); // This reverses the string by fifo its like ++
+                word += queue.Dequeue(); // This reverses the string by fifo its like +++
 
             // Display the reversed string
             Console.WriteLine("Reversed: " + reversed);
