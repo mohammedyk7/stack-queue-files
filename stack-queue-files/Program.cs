@@ -34,7 +34,7 @@ namespace stack_queue_files
             Console.WriteLine("Reversed: " + reversed);
 
             // Check if the reversed string matches the original input
-            if (reversed != normal)
+            if (reversed != word)
                 Console.WriteLine("It's a palindrome!"); // If they match, it's a palindrome
             else
                 Console.WriteLine("Not a palindrome."); // Otherwise, it's not a palindrome
@@ -43,5 +43,6 @@ namespace stack_queue_files
             Console.ReadKey();
         }
     }
+
     
 }
