@@ -6,7 +6,7 @@ namespace stack_queue_files
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Reverse()
         {
             // Prompt the user to enter a string
             Console.Write("Enter a string: ");
@@ -42,7 +42,70 @@ namespace stack_queue_files
             // Wait for a key press before closing the console
             Console.ReadKey();
         }
+
+        public static void EvaluatePostfix()
+        {
+            // Ask the user to enter a postfix expression
+            Console.Write("Enter a postfix expression (e.g., '5 3 + 8 *'): ");
+            string input = Console.ReadLine();
+
+            // Split the input into parts (numbers and operators)
+            string[] tokens = input.Split(' ');
+
+            // Create a stack to store numbers
+            Stack<double> stack = new Stack<double>();
+
+            // Go through each part of the expression
+            foreach (string token in tokens)
+            {
+                // Check if the current part is a number
+                if (double.TryParse(token, out double number))//return 
+                {
+                    // If it's a number, push it onto the stack
+                    stack.Push(number);
+                }
+                else
+                {
+                    // If it's not a number, it must be an operator
+                    // Pop two numbers from the stack
+                    double second = stack.Pop();
+                    double first = stack.Pop();
+
+                    // Perform the operation based on the operator
+                    double result = 0;
+                    if (token == "+")
+                    {
+                        result = first + second;
+                    }
+                    else if (token == "-")
+                    {
+                        result = first - second;
+                    }
+                    else if (token == "*")
+                    {
+                        result = first * second;
+                    }
+                    else if (token == "/")
+                    {
+                        result = first / second;
+                    }
+                    else
+                    {
+                        // If the operator is not recognized, show an error
+                        Console.WriteLine("Error: Unknown operator '" + token + "'");
+                        return;
+                    }
+
+                    // Push the result back onto the stack
+                    stack.Push(result);
+                }
+            }
+
+            // The final result is the only number left in the stack
+            double finalResult = stack.Pop();
+            Console.WriteLine("Result: " + finalResult);
+        }
     }
 
-    
+
 }
