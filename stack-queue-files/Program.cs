@@ -97,10 +97,7 @@ namespace stack_queue_files
                         Console.WriteLine("Error: Invalid postfix expression.");
                         return;
                     }
-                    {
-                        Console.WriteLine("Error: Invalid postfix expression.");
-                        return;
-                    }
+                   
                     double second = stack.Pop();
                     double first = stack.Pop();
 
