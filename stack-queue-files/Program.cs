@@ -191,6 +191,76 @@ namespace stack_queue_files
             double finalResult = stack.Pop();
             Console.WriteLine("Result: " + finalResult);
         }
+        public static void Browse()
+        {
+            
+            Console.Write("Enter the URL :");
+            string? input = Console.ReadLine();
+
+            // Split the input into parts (numbers and operators)
+            string[] links = input.S//tokens are both numbers and operators so we split them by space
+
+            // Create a stack to store numbers
+            Stack<string> history= new Stack<string>();
+
+            // Go through each part of the expression
+            foreach (string token in tokens)
+            {
+                // Check if the current part is a number
+                if (double.TryParse(token, out double number))//return true if the string is a number(result)+ check the token is a number if yes push 
+                {
+                    // If it's a number, push it onto the stack
+                    stack.Push(number);
+                } // or bool success = double.TryParse(token, out double number);
+
+                else
+                {
+                    // If it's not a number, it must be an operator
+                    // Pop two numbers from the stack
+                    if (stack.Count < 2) //two numbers are needed to perform an operation
+                    {
+                        Console.WriteLine("Error: Invalid postfix expression.");
+                        return;
+                    }
+
+                    double second = stack.Pop();
+                    double first = stack.Pop();
+
+                    // Perform the operation based on the operator
+                    double result = 0;
+                    if (token == "+")
+                    {
+                        result = first + second;// add the first and second numbers 5 3 +
+                    }
+                    else if (token == "-")
+                    {
+                        result = first - second;
+                    }
+                    else if (token == "*")
+                    {
+                        result = first * second;
+                    }
+                    else if (token == "/")
+                    {
+                        result = first / second;
+                    }
+                    else
+                    {
+                        // If the operator is not recognized, show an error
+                        Console.WriteLine("Error: Unknown operator '" + token + "'");
+                        return;
+                    }
+
+                    // Push the result back onto the stack
+                    stack.Push(result);
+                }
+            }
+
+            // The final result is the only number left in the stack
+            double finalResult = stack.Pop();
+            Console.WriteLine("Result: " + finalResult);
+        }
+    }
     }
 
 
