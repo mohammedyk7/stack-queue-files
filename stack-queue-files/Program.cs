@@ -105,7 +105,7 @@ namespace stack_queue_files
                     double result = 0;
                     if (token == "+")
                     {
-                        result = first + second;
+                        result = first + second;// add the first and second numbers 5 3 +
                     }
                     else if (token == "-")
                     {
