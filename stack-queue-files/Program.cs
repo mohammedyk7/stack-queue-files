@@ -63,7 +63,8 @@ namespace stack_queue_files
                 {
                     // If it's a number, push it onto the stack
                     stack.Push(number);
-                }
+                } // or bool success = double.TryParse(token, out double number);
+
                 else
                 {
                     // If it's not a number, it must be an operator
