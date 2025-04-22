@@ -50,7 +50,7 @@ namespace stack_queue_files
             string input = Console.ReadLine();
 
             // Split the input into parts (numbers and operators)
-            string[] tokens = input.Split(' ');
+            string[] tokens = input.Split(' ');//tokens are both numbers and operators so we split them by space
 
             // Create a stack to store numbers
             Stack<double> stack = new Stack<double>();
