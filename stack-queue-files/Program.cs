@@ -153,7 +153,7 @@ namespace stack_queue_files
                         Console.WriteLine("Error: Invalid postfix expression.");
                         return;
                     }
-                   
+
                     double second = stack.Pop();
                     double first = stack.Pop();
 
@@ -194,53 +194,48 @@ namespace stack_queue_files
         public static void Browse()
         {
 
-            using System;
-            using System.Collections.Generic;
 
-class Program
-        {
-            static void Main()
-            {
-                Stack<string> history = new Stack<string>();
-                string? input;
-
-                do
                 {
-                    Console.WriteLine("\n1. Go to page\n2. Back\n3. Current\n4. History\n0. Exit");
-                    Console.Write("Choose: ");
-                    input = Console.ReadLine();
+                    Stack<string> history = new Stack<string>();
+                    string? input;
 
-                    if (input == "1")
+                    do
                     {
-                        Console.Write("Enter URL: ");
-                        string? url = Console.ReadLine();
-                        if (!string.IsNullOrWhiteSpace(url))
-                            history.Push(url);
-                    }
-                    else if (input == "2")
-                    {
-                        if (history.Count > 0)
-                            Console.WriteLine($"Back from {history.Pop()}");
-                        else
-                            Console.WriteLine("No pages to go back.");
-                    }
-                    else if (input == "3")
-                    {
-                        Console.WriteLine(history.Count > 0 ? $"Current: {history.Peek()}" : "No page open.");//to look at the top item without removing it
-                    }
-                    else if (input == "4")
-                    {
-                        Console.WriteLine("History:");
-                        foreach (var page in history)
-                            Console.WriteLine($"- {page}");
-                    }
+                        Console.WriteLine("\n1. Go to page\n2. Back\n3. Current\n4. History\n0. Exit");
+                        Console.Write("Choose: ");
+                        input = Console.ReadLine();
 
-                } while (input != "0");
+                        if (input == "1")//go to page 
+                        {
+                            Console.Write("Enter URL: ");
+                            string? url = Console.ReadLine();
+                            if (!string.IsNullOrWhiteSpace(url))
+                                history.Push(url);
+                        }
+                        else if (input == "2")
+                        {
+                            if (history.Count > 0)
+                                Console.WriteLine($"Back from {history.Pop()}");
+                            else
+                                Console.WriteLine("No pages to go back.");
+                        }
+                        else if (input == "3")
+                        {
+                            Console.WriteLine(history.Count > 0 ? $"Current: {history.Peek()}" : "No page open.");//to look at the top item without removing it
+                        }
+                        else if (input == "4")
+                        {
+                            Console.WriteLine("History:");
+                            foreach (var page in history)
+                                Console.WriteLine(page);
+                        }
 
-                Console.WriteLine("Bye!");
+                    } while (input != "0");
+
+                    Console.WriteLine("Bye!");
+                }
             }
-        }
 
+        }
     }
-}
     
