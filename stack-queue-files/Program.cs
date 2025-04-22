@@ -59,7 +59,7 @@ namespace stack_queue_files
             foreach (string token in tokens)
             {
                 // Check if the current part is a number
-                if (double.TryParse(token, out double number))//return true if the string is a number(result)
+                if (double.TryParse(token, out double number))//return true if the string is a number(result)+ check the token is a number if yes push 
                 {
                     // If it's a number, push it onto the stack
                     stack.Push(number);
