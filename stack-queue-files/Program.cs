@@ -6,6 +6,29 @@ namespace stack_queue_files
 {
     internal class Program
     {
+        public static void Main(string[] args)
+        {
+            // Provide options to the user
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1. Reverse a string");
+            Console.WriteLine("2. Evaluate a postfix expression");
+            Console.Write("Enter your choice (1 or 2): ");
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Reverse();
+            }
+            else if (choice == "2")
+            {
+                EvaluatePostfix();
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice. Exiting program.");
+            }
+        }
+
         public static void Reverse()
         {
             // Prompt the user to enter a string
@@ -47,7 +70,7 @@ namespace stack_queue_files
         {
             // Ask the user to enter a postfix expression
             Console.Write("Enter a postfix expression (e.g., '5 3 + 8 *'): ");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             // Split the input into parts (numbers and operators)
             string[] tokens = input.Split(' ');//tokens are both numbers and operators so we split them by space
@@ -69,6 +92,15 @@ namespace stack_queue_files
                 {
                     // If it's not a number, it must be an operator
                     // Pop two numbers from the stack
+                    if (stack.Count < 2) //two numbers are needed to perform an operation
+                    {
+                        Console.WriteLine("Error: Invalid postfix expression.");
+                        return;
+                    }
+                    {
+                        Console.WriteLine("Error: Invalid postfix expression.");
+                        return;
+                    }
                     double second = stack.Pop();
                     double first = stack.Pop();
 
