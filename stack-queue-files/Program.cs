@@ -12,7 +12,18 @@ namespace stack_queue_files
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1. Reverse a string");
             Console.WriteLine("2. Evaluate a postfix expression");
-            Console.Write("Enter your choice (1 or 2): ");
+            Console.WriteLine("Browser History Navigation ");
+            Console.WriteLine("XML/HTML Tag Validator");
+            Console.WriteLine("Rotate Queue Elements by K");
+            Console.WriteLine("Sort a Queue Using Only Queue Operations ");
+            Console.WriteLine("Sliding Window Maximum Using Queue");
+            Console.Write("Write Names to File ");
+            Console.WriteLine("Search for a Word in a File");
+            Console.WriteLine("Count Words in a File");
+            Console.WriteLine("Count Lines, Words, and Characters");
+            Console.WriteLine("Word Frequency Counter");
+            Console.WriteLine("Filter and Save Specific Lines");
+            Console.WriteLine("Split and Merge Files");
             string choice = Console.ReadLine();
 
             if (choice == "1")
