@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace stack_queue_files
 {
@@ -12,18 +13,18 @@ namespace stack_queue_files
             Console.WriteLine("Choose an option:");
             Console.WriteLine("1. Reverse a string");
             Console.WriteLine("2. Evaluate a postfix expression");
-            Console.WriteLine("Browser History Navigation ");
-            Console.WriteLine("XML/HTML Tag Validator");
-            Console.WriteLine("Rotate Queue Elements by K");
-            Console.WriteLine("Sort a Queue Using Only Queue Operations ");
-            Console.WriteLine("Sliding Window Maximum Using Queue");
-            Console.Write("Write Names to File ");
-            Console.WriteLine("Search for a Word in a File");
-            Console.WriteLine("Count Words in a File");
-            Console.WriteLine("Count Lines, Words, and Characters");
-            Console.WriteLine("Word Frequency Counter");
-            Console.WriteLine("Filter and Save Specific Lines");
-            Console.WriteLine("Split and Merge Files");
+            Console.WriteLine("3. Browser History Navigation ");
+            Console.WriteLine("4. XML/HTML Tag Validator");
+            Console.WriteLine("5. Rotate Queue Elements by K");
+            Console.WriteLine("6. Sort a Queue Using Only Queue Operations ");
+            Console.WriteLine("7. Sliding Window Maximum Using Queue");
+            Console.WriteLine("8. Search for a Word in a File");
+            Console.WriteLine("9. Count Words in a File");
+            Console.WriteLine("10. Count Lines, Words, and Characters");
+            Console.WriteLine("11. Word Frequency Counter");
+            Console.WriteLine("12. Filter and Save Specific Lines");
+            Console.WriteLine("13. Split and Merge Files");
+            Console.Write(". Write Names to File ");
             string choice = Console.ReadLine();
 
             if (choice == "1")
@@ -33,6 +34,50 @@ namespace stack_queue_files
             else if (choice == "2")
             {
                 EvaluatePostfix();
+            }
+            else if (choice == "3")
+            {
+                Browse();
+            }
+            else if (choice == "4")
+            {
+                ValidateXML();
+            }
+            else if (choice == "5")
+            {
+                RotateQueue();
+            }
+            else if (choice == "6")
+            {
+                SortQueue();
+            }
+            else if (choice == "7")
+            {
+                SlidingWindowMaximum();
+            }
+            else if (choice == "8")
+            {
+                SearchWordInFile();
+            }
+            else if (choice == "9")
+            {
+                CountWordsInFile();
+            }
+            else if (choice == "10")
+            {
+                CountLinesWordsCharacters();
+            }
+            else if (choice == "11")
+            {
+                WordFrequencyCounter();
+            }
+            else if (choice == "12")
+            {
+                FilterAndSaveLines();
+            }
+            else if (choice == "13")
+            {
+                SplitAndMergeFiles();
             }
             else
             {
